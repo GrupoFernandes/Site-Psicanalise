@@ -4,13 +4,13 @@ Documentação completa do site profissional de psicanálise da **Iolanda Fernan
 
 - 🌐 **Site no ar:** https://acolhimentodamente.com.br
 - 📦 **Repositório:** https://github.com/GrupoFernandes/Site-Psicanalise
-- 📅 **Publicado em:** 31/05/2026
+- 📅 **Publicado em:** 31/05/2026 · **Conteúdo real publicado em:** 31/05/2026
 
 ---
 
 ## 1. Visão geral
 
-Site institucional de **página única** (*one-page*), estático e leve, feito para apresentar o trabalho da psicanalista Iolanda Fernandes. Não tem login, banco de dados nem formulários que enviam dados — é apenas conteúdo visual e informativo, com o contato feito por WhatsApp/e-mail/Instagram.
+Site institucional de **página única** (*one-page*), estático e leve, para apresentar o trabalho da psicanalista Iolanda Fernandes. Não tem login nem banco de dados. O contato é feito por **formulário** (que chega no e-mail dela) e por **WhatsApp**.
 
 | Item | Detalhe |
 |------|---------|
@@ -18,6 +18,7 @@ Site institucional de **página única** (*one-page*), estático e leve, feito p
 | Hospedagem | GitHub Pages (gratuita) |
 | Domínio | `acolhimentodamente.com.br` (registrado na Locaweb) |
 | Segurança | HTTPS ativo (certificado Let's Encrypt, renovação automática) |
+| Formulário | FormSubmit (gratuito, sem servidor) → envia para o e-mail da Iolanda |
 | Custo | Apenas a renovação anual do domínio (~R$ 40–50/ano). Zero mensalidade. |
 
 ---
@@ -27,57 +28,59 @@ Site institucional de **página única** (*one-page*), estático e leve, feito p
 ```
 Site-Psicanalise/
 ├── index.html          # A página inteira (todas as seções)
+├── obrigada.html       # Página exibida após enviar o formulário
 ├── css/
 │   └── styles.css      # Todo o visual: cores, fontes, layout, responsividade
 ├── js/
 │   └── main.js         # Menu mobile + ano automático no rodapé
+├── img/                # Imagens do site (otimizadas para web)
+│   ├── iolanda.jpg         # Foto da Iolanda (seção "Sobre mim")
+│   ├── campo-verde.jpg     # Imagem do topo (hero)
+│   ├── broto.jpg           # Imagem da seção "Sobre meu trabalho"
+│   └── luz-folhas.jpg      # Fundo da faixa de citação
 ├── CNAME               # Contém o domínio (não apagar — liga o site ao endereço)
 ├── README.md           # Documento original de planejamento do projeto
 └── DOCUMENTACAO.md     # Este arquivo
 ```
 
-> ⚠️ **Não apague o arquivo `CNAME`.** Ele é o que conecta o site ao endereço `acolhimentodamente.com.br`. Se sumir, o domínio personalizado para de funcionar.
+> ⚠️ **Não apague o arquivo `CNAME`.** Ele conecta o site ao endereço `acolhimentodamente.com.br`. Se sumir, o domínio personalizado para de funcionar.
 
 ---
 
 ## 3. Seções da página
 
-A página (`index.html`) é dividida em 6 seções, na ordem em que aparecem:
+A página (`index.html`) tem as seguintes seções, na ordem em que aparecem:
 
 | # | Seção | ID (âncora) | Conteúdo |
 |---|-------|-------------|----------|
-| 1 | **Hero** | `#hero` | Abertura: frase de impacto, subtítulo, botão "Agendar conversa inicial" e foto |
-| 2 | **Sobre** | `#sobre` | Biografia + box lateral de formação/credenciais |
-| 3 | **Atendimento** | `#atendimento` | 3 cards: Online, Presencial, Para quem |
-| 4 | **Áreas de atuação** | `#areas` | 6 áreas em grade (ansiedade, luto, autoconhecimento, etc.) |
-| 5 | **Como funciona** | `#como-funciona` | 3 passos numerados (primeira conversa, frequência, sigilo) |
-| 6 | **Contato** | `#contato` | WhatsApp, e-mail, Instagram e endereço |
+| 1 | **Hero (topo)** | `#hero` | Frase de acolhimento, imagem serena e botão "Agende seu atendimento" |
+| 2 | **Sobre meu trabalho** | `#trabalho` | O que é a psicanálise + imagem do broto |
+| 3 | **Como posso te ajudar?** | `#areas` | 5 temas (ansiedade, conflitos, relacionamentos, autoconhecimento, transição) |
+| 4 | **Sobre mim** | `#sobre` | Biografia da Iolanda + foto |
+| 5 | **Atendimento** | `#atendimento` | Como funciona · Online/Individual/50 min · Para quem · Diferenciais |
+| 6 | **Faixa de citação** | — | Frase de encerramento sobre imagem de fundo |
+| 7 | **Contato** | `#contato` | Formulário + WhatsApp + e-mail |
 
-O menu do topo (cabeçalho fixo) leva direto a cada seção. No celular, ele vira um menu "hambúrguer" (☰).
+O menu do topo leva direto a cada seção. No celular, vira um menu "hambúrguer" (☰).
 
 ---
 
-## 4. ⚠️ Conteúdo a preencher (PLACEHOLDERS)
+## 4. Contato — como funciona
 
-> **Importante:** o site está no ar com a estrutura e o visual prontos, mas **os textos ainda são provisórios**. Em `index.html` existem várias marcações `[PLACEHOLDER: ...]` e comentários `<!-- TODO -->` que precisam ser substituídos pelo conteúdo real da Iolanda.
+O site tem **duas formas de contato**, ambas já configuradas:
 
-O que ainda falta preencher:
+### 📬 Formulário (FormSubmit)
+- Campos: Nome, E-mail, Telefone/WhatsApp, Mensagem
+- Ao enviar, a mensagem vai para **iolandaxpsicanalise@gmail.com** pelo serviço gratuito **FormSubmit** (não precisa de servidor nem de conta)
+- Depois de enviar, o visitante vê a página `obrigada.html`
+- ⚠️ **Ativação única:** na **primeira vez** que o formulário for enviado, o FormSubmit manda um e-mail pedindo confirmação. A Iolanda precisa abrir esse e-mail (conferir o **Spam** também) e clicar em **"Activate Form"**. Depois disso, todas as mensagens chegam normalmente.
+- Para mudar o e-mail de destino: no `index.html`, alterar o endereço em `action="https://formsubmit.co/SEU-EMAIL"`
 
-- [ ] **Meta descrição** (linha 6 do `index.html`) — texto que aparece no Google
-- [ ] **Frase de abertura** e subtítulo do Hero
-- [ ] **Foto profissional** da Iolanda → salvar em `img/iolanda.jpg` e trocar o bloco de placeholder
-- [ ] **Biografia** (3 parágrafos) na seção Sobre
-- [ ] **Formação / instituições / filiações** no box lateral
-- [ ] **CRP** (se a Iolanda for psicóloga formada) — no box de formação e no rodapé
-- [ ] Textos dos cards de **Atendimento** (online, presencial, para quem)
-- [ ] Descrições das **Áreas de atuação**
-- [ ] Textos de **Como funciona** (primeira conversa, frequência, sigilo)
-- [ ] **WhatsApp** real (formato do link: `https://wa.me/55XXXXXXXXXXX`)
-- [ ] **E-mail** real
-- [ ] **Instagram** real
-- [ ] **Endereço/bairro** (somente se houver atendimento presencial)
-
-> 💡 Para encontrar tudo o que falta, abra o `index.html` e procure (Ctrl+F) pela palavra `PLACEHOLDER`.
+### 🟢 WhatsApp
+- Número: **(11) 99950-0914** → link `https://wa.me/5511999500914`
+- Aparece em **dois lugares**: botão verde flutuante (canto inferior direito) e na seção Contato
+- Já vem com uma mensagem pronta ("Olá, Iolanda! Vim pelo site...")
+- Para mudar o número: trocar `5511999500914` no `index.html` (formato: 55 + DDD + número)
 
 ---
 
@@ -85,34 +88,27 @@ O que ainda falta preencher:
 
 Tudo é feito editando os arquivos no VSCode, na pasta do projeto.
 
-- **Mudar textos** → editar `index.html` (substituir os trechos `[PLACEHOLDER]`)
+- **Mudar textos** → editar `index.html`
+- **Trocar a foto ou as imagens** → substituir os arquivos dentro de `img/` (mantendo os mesmos nomes), ou apontar para um arquivo novo no `index.html`
 - **Mudar cores, fontes ou layout** → editar `css/styles.css`
-- **Adicionar a foto** → criar a pasta `img/`, colocar a foto lá, e ajustar o `index.html`
+- **Mudar e-mail/WhatsApp de contato** → ver seção 4 acima
 
-Exemplo prático — trocar a frase de abertura:
-```html
-<!-- ANTES -->
-<h1>[PLACEHOLDER: frase acolhedora de abertura — ex.: "Um espaço para escutar o que ainda não foi dito."]</h1>
-
-<!-- DEPOIS -->
-<h1>Um espaço para escutar o que ainda não foi dito.</h1>
-```
+> 💡 **Imagens:** sempre otimize antes de subir (reduza o tamanho). As fotos de celular costumam ter vários MB; o ideal para web é deixá-las abaixo de ~500 KB. As imagens atuais já foram otimizadas.
 
 ---
 
 ## 6. Como publicar alterações (colocar no ar)
 
-O site atualiza sozinho sempre que as mudanças chegam ao GitHub. O fluxo é:
+O site atualiza sozinho sempre que as mudanças chegam ao GitHub:
 
 1. **Edite** os arquivos no VSCode e salve (Ctrl+S)
-2. Abra o painel **Source Control** (ícone de galho na barra esquerda, ou `Ctrl+Shift+G`)
-3. Escreva uma mensagem curta descrevendo a mudança (ex.: *"Adiciona biografia e contatos reais"*)
-4. Clique em **Commit**
-5. Clique em **Sync Changes** (ou **Push**)
+2. Abra o **Source Control** (ícone de galho, ou `Ctrl+Shift+G`)
+3. Escreva uma mensagem curta da mudança e clique em **Commit**
+4. Clique em **Sync Changes** (ou **Push**)
 
-Em **1 a 2 minutos**, as mudanças aparecem no ar em https://acolhimentodamente.com.br.
+Em **1 a 3 minutos**, as mudanças aparecem no ar em https://acolhimentodamente.com.br.
 
-> 💡 Dica: se não vir a mudança no navegador, recarregue com **Ctrl + Shift + R** (limpa o cache).
+> 💡 Se não vir a mudança, recarregue com **Ctrl + Shift + R** (limpa o cache).
 
 ---
 
@@ -128,7 +124,8 @@ Definida via variáveis no topo do `css/styles.css` (`:root`). Para mudar a cara
 | Verde-acinzentado escuro | `#2E3A36` | Textos e rodapé |
 | Verde-sálvia | `#8FA68E` | Destaques, detalhes |
 | Verde-sálvia escuro | `#6E8A6D` | Botões, links |
-| Terracota suave | `#C28E73` | Detalhes, "eyebrow", números |
+| Terracota suave | `#C28E73` | Detalhes, "eyebrow" |
+| Lilás suave | `#B9A7C9` | Acento opcional |
 
 ### Tipografia (Google Fonts)
 - **Playfair Display** (serifada, elegante) — títulos
@@ -136,18 +133,18 @@ Definida via variáveis no topo do `css/styles.css` (`:root`). Para mudar a cara
 
 ### Responsividade (mobile-first)
 - Base: layout de coluna única (celular)
-- A partir de **720px**: layouts em grade (tablet/desktop)
-- A partir de **960px**: áreas de atuação em 3 colunas
+- A partir de **720px**: grades de 2–3 colunas
+- A partir de **960px**: "Como posso te ajudar?" em 5 colunas
 
 ---
 
 ## 8. JavaScript (`js/main.js`)
 
-Arquivo minúsculo, com apenas duas funções:
-1. **Menu mobile** — abre/fecha o menu "hambúrguer" no celular e fecha ao clicar num link
-2. **Ano automático** — preenche o ano atual no rodapé sozinho (não precisa atualizar todo ano)
+Arquivo minúsculo, com duas funções:
+1. **Menu mobile** — abre/fecha o menu "hambúrguer" no celular
+2. **Ano automático** — preenche o ano atual no rodapé sozinho
 
-Não há bibliotecas externas — JavaScript puro, sem dependências.
+Sem bibliotecas externas — JavaScript puro.
 
 ---
 
@@ -176,19 +173,18 @@ Visitante digita acolhimentodamente.com.br
 | CNAME | `www` | `grupofernandes.github.io.` |
 
 ### GitHub Pages
-- Configurado em: **Settings → Pages**
-- Origem: branch `main`, pasta `/ (root)`
-- Domínio personalizado: `acolhimentodamente.com.br`
-- **Enforce HTTPS:** ✅ ativado
+- Configurado em: **Settings → Pages** · Origem: branch `main`, pasta `/ (root)`
+- Domínio personalizado: `acolhimentodamente.com.br` · **Enforce HTTPS** ✅
 
 ---
 
 ## 10. Manutenção e cuidados
 
-- 🗓️ **Renovação do domínio:** fique atento ao e-mail da Locaweb todo ano. Se o domínio expirar, o site sai do ar. Esse é o **único custo recorrente**.
-- 🔒 **Certificado HTTPS:** renova sozinho (GitHub + Let's Encrypt). Não precisa fazer nada.
-- 🚫 **Não apagar** os arquivos `CNAME` nem desativar o GitHub Pages.
-- 💾 **Backup:** o próprio GitHub já guarda todo o histórico. Cada alteração publicada fica registrada e pode ser revertida.
+- 🗓️ **Renovação do domínio:** fique atento ao e-mail da Locaweb todo ano. Se o domínio expirar, o site sai do ar. É o **único custo recorrente**.
+- 📬 **Formulário:** lembre-se da **ativação única** do FormSubmit (seção 4). Se as mensagens pararem de chegar, confira o e-mail e o Spam.
+- 🔒 **Certificado HTTPS:** renova sozinho. Não precisa fazer nada.
+- 🚫 **Não apagar** o `CNAME` nem desativar o GitHub Pages.
+- 💾 **Backup:** o GitHub guarda todo o histórico; cada alteração pode ser revertida.
 
 ---
 
@@ -196,24 +192,30 @@ Visitante digita acolhimentodamente.com.br
 
 | Problema | Possível causa / solução |
 |----------|--------------------------|
-| Site fora do ar (erro 404) | Verificar se o GitHub Pages está ativo e se o arquivo `CNAME` existe no repositório |
-| "Site não seguro" | Acessar com `https://` e conferir se "Enforce HTTPS" está marcado em Settings → Pages |
-| Mudança não aparece | Aguardar 1–2 min e recarregar com `Ctrl + Shift + R` |
-| Domínio parou de funcionar | Conferir se o domínio não expirou na Locaweb e se os registros DNS continuam corretos (seção 9) |
-| Menu mobile não abre | Conferir se o `js/main.js` está sendo carregado (final do `index.html`) |
+| Site fora do ar (erro 404) | Verificar se o GitHub Pages está ativo e se o `CNAME` existe |
+| "Site não seguro" | Acessar com `https://` e conferir "Enforce HTTPS" em Settings → Pages |
+| Mudança não aparece | Aguardar 1–3 min e recarregar com `Ctrl + Shift + R` |
+| Formulário não chega no e-mail | Confirmar a **ativação** do FormSubmit (e o Spam); conferir o e-mail em `action=` no index.html |
+| WhatsApp abre número errado | Conferir o número `5511999500914` no index.html (55 + DDD + número) |
+| Imagem não aparece | Conferir se o arquivo existe em `img/` com o nome certo |
+| Domínio parou de funcionar | Conferir se não expirou na Locaweb e se os registros DNS continuam corretos (seção 9) |
 
 ---
 
 ## 12. Considerações éticas / legais
 
-Se a Iolanda for **psicóloga formada com CRP**, o site deve seguir a **Resolução CFP 06/2019**:
-- Não prometer resultados ou curas
-- Não exibir depoimentos de pacientes
-- Evitar termos comerciais agressivos
-- Exibir o número do CRP
+A Iolanda atua como **psicanalista**. O site mantém sobriedade e foco no acolhimento, sem prometer resultados ou exibir depoimentos de pacientes.
 
-Se for **somente psicanalista** (sem CRP), a publicidade é mais livre, mas recomenda-se manter a sobriedade — a psicanálise valoriza a discrição.
+> Caso futuramente ela passe a ter registro de **psicóloga (CRP)**, será necessário seguir a **Resolução CFP 06/2019** (exibir o número do CRP, não prometer curas, etc.).
 
 ---
 
-_Documentação criada em 31/05/2026. Mantenha este arquivo atualizado conforme o site evoluir._
+## 13. Itens opcionais / futuros
+
+- 📷 **Instagram:** ainda não há perfil. Quando houver, adicionar na seção Contato.
+- 🏢 **Atendimento presencial:** hoje o site informa apenas **online**. Se passar a atender presencialmente, incluir cidade/endereço.
+- ✍️ Pode-se adicionar futuramente: depoimentos (com cuidado ético), blog/artigos, ou um FAQ.
+
+---
+
+_Documentação atualizada em 31/05/2026. Mantenha este arquivo atualizado conforme o site evoluir._
