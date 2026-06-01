@@ -71,7 +71,7 @@ O site tem **duas formas de contato**, ambas já configuradas:
 
 ### 📬 Formulário (FormSubmit)
 - Campos: Nome, E-mail, Telefone/WhatsApp, Mensagem
-- Ao enviar, a mensagem vai para **iolandaxpsicanalise@gmail.com** pelo serviço gratuito **FormSubmit** (não precisa de servidor nem de conta)
+- Ao enviar, a mensagem vai para **acolhimentodamente@gmail.com** pelo serviço gratuito **FormSubmit** (não precisa de servidor nem de conta)
 - Depois de enviar, o visitante vê a página `obrigada.html`
 - ⚠️ **Ativação única:** na **primeira vez** que o formulário for enviado, o FormSubmit manda um e-mail pedindo confirmação. A Iolanda precisa abrir esse e-mail (conferir o **Spam** também) e clicar em **"Activate Form"**. Depois disso, todas as mensagens chegam normalmente.
 - Para mudar o e-mail de destino: no `index.html`, alterar o endereço em `action="https://formsubmit.co/SEU-EMAIL"`
