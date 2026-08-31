@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /obrigada.html
+
+Sitemap: https://acolhimentodamente.com.br/sitemap.xml
