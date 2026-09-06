@@ -55,11 +55,13 @@ A página (`index.html`) tem as seguintes seções, na ordem em que aparecem:
 |---|-------|-------------|----------|
 | 1 | **Hero (topo)** | `#hero` | Frase de acolhimento, imagem serena e botão "Agende seu atendimento" |
 | 2 | **Sobre meu trabalho** | `#trabalho` | O que é a psicanálise + imagem do broto |
-| 3 | **Como posso te ajudar?** | `#areas` | 5 temas (ansiedade, conflitos, relacionamentos, autoconhecimento, transição) |
-| 4 | **Sobre mim** | `#sobre` | Biografia da Iolanda + foto |
-| 5 | **Atendimento** | `#atendimento` | Como funciona · Online/Individual/50 min · Para quem · Diferenciais |
-| 6 | **Faixa de citação** | — | Frase de encerramento sobre imagem de fundo |
-| 7 | **Contato** | `#contato` | Formulário + WhatsApp + e-mail |
+| 3 | **Como posso te ajudar?** | `#areas` | 6 temas (ansiedade e depressão, vida profissional, conflitos, relacionamentos, autoconhecimento, transição) |
+| 4 | **Para quem** | `#para-quem` | Públicos-alvo: mulheres profissionais · profissionais do corporativo · ansiedade/depressão |
+| 5 | **Sobre mim** | `#sobre` | Biografia da Iolanda + foto |
+| 6 | **Atendimento** | `#atendimento` | Como funciona · Online/Individual/50 min · Para quem · Diferenciais |
+| 7 | **Perguntas frequentes** | `#faq` | 6 perguntas em sanfona (com dados estruturados FAQPage para o Google) |
+| 8 | **Faixa de citação** | — | Frase de encerramento sobre imagem de fundo |
+| 9 | **Contato** | `#contato` | Formulário + WhatsApp + e-mail |
 
 O menu do topo leva direto a cada seção. No celular, vira um menu "hambúrguer" (☰).
 
@@ -112,7 +114,17 @@ Em **1 a 3 minutos**, as mudanças aparecem no ar em https://acolhimentodamente.
 
 ---
 
-## 7. Identidade visual
+## 7. SEO — como o site aparece no Google
+
+- **Google Search Console:** propriedade `https://acolhimentodamente.com.br/` verificada em 06/09/2026 pela tag `google-site-verification` no `index.html` (**não remover**). Sitemap enviado e indexação solicitada.
+- **Arquivos:** `robots.txt` (permite indexação, aponta o sitemap) e `sitemap.xml` (lista a página principal). Ao fazer mudanças grandes, atualize a data `<lastmod>` no sitemap.
+- **Dados estruturados (JSON-LD)** no `<head>`: `ProfessionalService` (nome, telefone, e-mail, serviços) e `FAQPage` (perguntas frequentes). Se mudar uma pergunta na seção FAQ, mude também no JSON-LD.
+- **Palavras-chave trabalhadas:** psicanálise online · terapia para ansiedade e depressão · psicanálise para mulheres profissionais · terapia para profissionais do ambiente corporativo · todo o Brasil. Elas aparecem no `<title>`, na `meta description`, nos títulos das seções e nos textos.
+- **Como acompanhar:** em https://search.google.com/search-console veja cliques, impressões e as buscas que levaram ao site. Para testar se já está indexado, pesquise `site:acolhimentodamente.com.br` no Google.
+
+---
+
+## 8. Identidade visual
 
 Definida via variáveis no topo do `css/styles.css` (`:root`). Para mudar a cara do site inteiro, basta alterar esses valores.
 
@@ -120,12 +132,11 @@ Definida via variáveis no topo do `css/styles.css` (`:root`). Para mudar a cara
 | Cor | Código | Uso |
 |-----|--------|-----|
 | Off-white | `#FAF7F2` | Fundo principal |
-| Off-white quente | `#F1ECE3` | Fundo de seções alternadas |
+| Off-white quente | `#F2EDE4` | Fundo de seções alternadas |
 | Verde-acinzentado escuro | `#2E3A36` | Textos e rodapé |
 | Verde-sálvia | `#8FA68E` | Destaques, detalhes |
-| Verde-sálvia escuro | `#6E8A6D` | Botões, links |
+| Verde-sálvia escuro | `#66805F` | Botões, links |
 | Terracota suave | `#C28E73` | Detalhes, "eyebrow" |
-| Lilás suave | `#B9A7C9` | Acento opcional |
 
 ### Tipografia (Google Fonts)
 - **Playfair Display** (serifada, elegante) — títulos
@@ -134,7 +145,7 @@ Definida via variáveis no topo do `css/styles.css` (`:root`). Para mudar a cara
 ### Responsividade (mobile-first)
 - Base: layout de coluna única (celular)
 - A partir de **720px**: grades de 2–3 colunas
-- A partir de **960px**: "Como posso te ajudar?" em 5 colunas
+- A partir de **960px**: "Como posso te ajudar?" em 3 colunas (6 cards)
 
 ---
 
