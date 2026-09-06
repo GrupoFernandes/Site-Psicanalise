@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Iolanda Fernandes — Psicanálise. Atendimento psicanalítico online, individual e acolhedor. Um espaço de escuta, sem julgamentos, para autoconhecimento e transformação." />
   <meta name="author" content="Iolanda Fernandes" />
+  <meta name="theme-color" content="#FAF7F2" />
 
   <title>Iolanda Fernandes — Psicanálise | Atendimento online</title>
 
   <link rel="canonical" href="https://acolhimentodamente.com.br/" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="img/favicon.svg" />
 
   <!-- Open Graph (preview ao compartilhar no WhatsApp e redes sociais) -->
   <meta property="og:type" content="website" />
@@ -44,7 +47,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -52,7 +55,10 @@
 
   <header class="site-header" id="topo">
     <div class="container header-inner">
-      <a href="#topo" class="logo">Iolanda Fernandes</a>
+      <a href="#topo" class="logo" aria-label="Iolanda Fernandes — início">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="currentColor"/><path d="M46 16C29 17 18 28 18 45c0 1.8.2 3.4.5 5C25 35 34 26 46 16z" fill="#FAF7F2"/></svg>
+        <span class="logo-text">Iolanda Fernandes<small>Psicanálise</small></span>
+      </a>
 
       <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
@@ -65,6 +71,7 @@
           <li><a href="#sobre">Sobre mim</a></li>
           <li><a href="#atendimento">Atendimento</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li class="nav-cta"><a href="#contato" class="btn btn-primary btn-sm">Agendar</a></li>
         </ul>
       </nav>
     </div>
@@ -74,15 +81,26 @@
 
     <!-- 1. HERO -->
     <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="eyebrow">Psicanálise</p>
-          <h1>Um espaço de escuta, acolhimento e transformação</h1>
+        <div class="hero-text reveal">
+          <p class="eyebrow">Psicanálise · Atendimento online</p>
+          <h1>Um espaço de escuta, <em>acolhimento</em> e transformação</h1>
           <p class="lead">Acolho sua história com respeito, ética e sensibilidade. Aqui, você pode falar livremente e iniciar um caminho de autoconhecimento.</p>
-          <a href="#contato" class="btn btn-primary">Agende seu atendimento</a>
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-primary">Agende seu atendimento</a>
+            <a href="#trabalho" class="btn btn-ghost">Conheça meu trabalho</a>
+          </div>
+          <ul class="hero-badges" aria-label="Resumo do atendimento">
+            <li>Sessões online</li>
+            <li>50 minutos</li>
+            <li>Sigilo e ética</li>
+          </ul>
         </div>
-        <div class="hero-image">
-          <img src="img/campo-verde.jpg" alt="Folhas verdes sob luz suave, transmitindo calma" class="hero-photo" />
+        <div class="hero-image reveal reveal-delay">
+          <div class="photo-frame">
+            <img src="img/campo-verde.jpg" alt="Folhas verdes sob luz suave, transmitindo calma" class="hero-photo" fetchpriority="high" />
+          </div>
         </div>
       </div>
     </section>
@@ -91,13 +109,16 @@
     <section class="section section-alt" id="trabalho">
       <div class="container">
         <div class="media-grid">
-          <div class="media-text">
+          <div class="media-text reveal">
+            <p class="eyebrow">O trabalho</p>
             <h2 class="section-title">Sobre meu trabalho</h2>
             <p>Se você sente que precisa compreender melhor suas emoções, lidar com conflitos internos ou atravessar um momento desafiador, a escuta psicanalítica pode ser um caminho. Meu trabalho é oferecer um espaço seguro, sem julgamentos, onde você possa ser quem realmente é.</p>
             <p>A Psicanálise é um convite para olhar para si com mais profundidade. Por meio da fala e da escuta, é possível compreender padrões, emoções e experiências que influenciam a forma como você vive hoje.</p>
           </div>
-          <div class="media-image">
-            <img src="img/broto.jpg" alt="Pequeno broto crescendo, símbolo de transformação" />
+          <div class="media-image reveal reveal-delay">
+            <div class="photo-frame photo-frame-warm">
+              <img src="img/broto.jpg" alt="Pequeno broto crescendo, símbolo de transformação" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -106,14 +127,37 @@
     <!-- 3. COMO POSSO TE AJUDAR -->
     <section class="section" id="areas">
       <div class="container">
-        <h2 class="section-title">Como posso te ajudar?</h2>
-        <p class="section-lead">Alguns dos temas que podemos acolher e elaborar juntos ao longo do processo.</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Áreas de acolhimento</p>
+          <h2 class="section-title">Como posso te ajudar?</h2>
+          <p class="section-lead">Alguns dos temas que podemos acolher e elaborar juntos ao longo do processo.</p>
+        </div>
         <div class="areas-grid">
-          <div class="area-item"><h4>Ansiedade e angústia</h4></div>
-          <div class="area-item"><h4>Conflitos emocionais</h4></div>
-          <div class="area-item"><h4>Relacionamentos</h4></div>
-          <div class="area-item"><h4>Autoconhecimento</h4></div>
-          <div class="area-item"><h4>Momentos de transição ou crise</h4></div>
+          <article class="area-item reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8c3-3 6 3 9 0s6-3 9 0M3 16c3-3 6 3 9 0s6-3 9 0"/></svg></span>
+            <h3>Ansiedade e angústia</h3>
+            <p>Quando a inquietação e o medo ocupam espaço demais no dia a dia.</p>
+          </article>
+          <article class="area-item reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>
+            <h3>Conflitos emocionais</h3>
+            <p>Sentimentos contraditórios que pedem escuta e elaboração.</p>
+          </article>
+          <article class="area-item reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3.5 2.7-6 6-6s6 2.5 6 6M15.5 19c0-2.4 1.8-4.3 4.2-4.3S22 16.6 22 19"/></svg></span>
+            <h3>Relacionamentos</h3>
+            <p>Vínculos afetivos, familiares e profissionais que geram sofrimento.</p>
+          </article>
+          <article class="area-item reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Autoconhecimento</h3>
+            <p>Compreender padrões e desejos para viver com mais liberdade.</p>
+          </article>
+          <article class="area-item reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M4.9 7.9l2.1 2.1M19.1 7.9 17 10M3 17h18M6.5 17a5.5 5.5 0 0 1 11 0M9 21h6"/></svg></span>
+            <h3>Momentos de transição ou crise</h3>
+            <p>Mudanças, perdas e recomeços que exigem acolhimento.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -121,19 +165,22 @@
     <!-- 4. SOBRE MIM -->
     <section class="section section-alt" id="sobre">
       <div class="container">
-        <h2 class="section-title">Sobre mim</h2>
         <div class="sobre-grid">
-          <div class="sobre-text">
-            <p>Sou uma profissional apaixonada por pessoas, desenvolvimento humano e escuta genuína.</p>
+          <div class="sobre-text reveal">
+            <p class="eyebrow">Quem sou</p>
+            <h2 class="section-title">Sobre mim</h2>
+            <p class="sobre-intro">Sou uma profissional apaixonada por pessoas, desenvolvimento humano e escuta genuína.</p>
             <p>Construí minha trajetória ao longo de anos na área de Educação Corporativa na área da saúde, atuando no desenvolvimento de líderes e equipes. Essa caminhada me proporcionou uma escuta atenta às dores, aos desafios e às potencialidades de cada indivíduo — sempre com foco em promover crescimento, consciência e transformação.</p>
             <p>Ao longo da minha carreira, tive o privilégio de acompanhar histórias diversas, apoiar processos de mudança, facilitar diálogos difíceis e contribuir para o fortalecimento de relações mais saudáveis no ambiente de trabalho. Essa experiência aprofundou em mim algo essencial: a importância de olhar para o ser humano para além do comportamento — acolher sua história, suas emoções e sua subjetividade.</p>
-            <p>Foi esse percurso que me conduziu à Psicanálise.</p>
+            <p class="destaque">Foi esse percurso que me conduziu à Psicanálise.</p>
             <p>Hoje, direciono meu trabalho para o atendimento clínico, oferecendo um espaço seguro, ético e acolhedor, onde você pode falar livremente, sem julgamentos. Um espaço de escuta que respeita o seu tempo, sua singularidade e seu processo.</p>
             <p>Acredito que o autoconhecimento é um caminho potente para compreender conflitos, ressignificar experiências e ampliar possibilidades de vida. Se você busca compreender melhor suas emoções, relações ou momentos de vida, estou aqui para caminhar com você nesse processo.</p>
           </div>
-          <aside class="sobre-foto">
-            <img src="img/iolanda.jpg" alt="Iolanda Fernandes, psicanalista" />
-            <p class="sobre-foto-nome">Iolanda Fernandes<span>Psicanálise</span></p>
+          <aside class="sobre-foto reveal reveal-delay">
+            <div class="photo-frame">
+              <img src="img/iolanda.jpg" alt="Iolanda Fernandes, psicanalista" loading="lazy" />
+            </div>
+            <p class="sobre-foto-nome">Iolanda Fernandes<span>Psicanalista</span></p>
           </aside>
         </div>
       </div>
@@ -142,30 +189,32 @@
     <!-- 5. ATENDIMENTO -->
     <section class="section" id="atendimento">
       <div class="container">
-        <h2 class="section-title">Atendimento Psicanalítico</h2>
-
-        <div class="atend-bloco">
-          <h3>Como funciona</h3>
-          <p>O atendimento é um espaço de escuta individual, onde você pode falar livremente sobre sua história, sentimentos e experiências. Através da fala, vamos construindo juntos um caminho de compreensão e elaboração, respeitando sempre o seu tempo e sua singularidade.</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Atendimento</p>
+          <h2 class="section-title">Atendimento Psicanalítico</h2>
+          <p class="section-lead">O atendimento é um espaço de escuta individual, onde você pode falar livremente sobre sua história, sentimentos e experiências. Através da fala, vamos construindo juntos um caminho de compreensão e elaboração, respeitando sempre o seu tempo e sua singularidade.</p>
         </div>
 
         <div class="cards-grid">
-          <article class="card">
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
             <h3>Online</h3>
             <p>Atendimento realizado a distância, com conforto e privacidade, de onde você estiver.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
             <h3>Sessões individuais</h3>
             <p>Um espaço exclusivo e dedicado inteiramente a você e ao seu processo.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
             <h3>50 minutos</h3>
             <p>Duração média de cada sessão, com regularidade definida em conjunto.</p>
           </article>
         </div>
 
         <div class="atend-listas">
-          <div class="atend-coluna">
+          <div class="atend-coluna reveal">
             <h3>Para quem é indicado</h3>
             <p>O atendimento é indicado para pessoas que desejam:</p>
             <ul class="lista-check">
@@ -176,7 +225,7 @@
               <li>Desenvolver autoconhecimento</li>
             </ul>
           </div>
-          <div class="atend-coluna">
+          <div class="atend-coluna reveal reveal-delay">
             <h3>Diferenciais do meu trabalho</h3>
             <ul class="lista-check">
               <li>Escuta acolhedora e sem julgamentos</li>
@@ -191,7 +240,8 @@
 
     <!-- FAIXA / CITAÇÃO -->
     <section class="band" aria-label="Mensagem">
-      <div class="band-overlay">
+      <div class="band-overlay reveal">
+        <span class="band-mark" aria-hidden="true">“</span>
         <p class="band-quote">Seu processo começa com um primeiro passo.<br />Estou aqui para te acolher.</p>
         <a href="#contato" class="btn btn-light">Agende seu atendimento</a>
       </div>
@@ -200,42 +250,56 @@
     <!-- 6. CONTATO -->
     <section class="section section-alt" id="contato">
       <div class="container">
-        <h2 class="section-title">Entre em contato</h2>
-        <p class="section-lead">Se você deseja iniciar seu processo ou tirar dúvidas, será um prazer falar com você.</p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Contato</p>
+          <h2 class="section-title">Entre em contato</h2>
+          <p class="section-lead">Se você deseja iniciar seu processo ou tirar dúvidas, será um prazer falar com você.</p>
+        </div>
 
         <div class="contato-grid">
-          <form class="form" action="https://formsubmit.co/acolhimentodamente@gmail.com" method="POST">
+          <form class="form reveal" action="https://formsubmit.co/acolhimentodamente@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Novo contato pelo site — Acolhimento da Mente" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://acolhimentodamente.com.br/obrigada.html" />
             <input type="text" name="_honey" style="display:none" />
 
-            <label>Nome
-              <input type="text" name="Nome" required placeholder="Seu nome" />
-            </label>
+            <div class="form-row">
+              <label>Nome
+                <input type="text" name="Nome" required placeholder="Seu nome" autocomplete="name" />
+              </label>
+              <label>Telefone / WhatsApp
+                <input type="tel" name="Telefone" placeholder="(11) 90000-0000" autocomplete="tel" />
+              </label>
+            </div>
             <label>E-mail
-              <input type="email" name="E-mail" required placeholder="seu@email.com" />
-            </label>
-            <label>Telefone / WhatsApp
-              <input type="tel" name="Telefone" placeholder="(11) 90000-0000" />
+              <input type="email" name="E-mail" required placeholder="seu@email.com" autocomplete="email" />
             </label>
             <label>Mensagem
-              <textarea name="Mensagem" rows="5" required placeholder="Escreva sua mensagem..."></textarea>
+              <textarea name="Mensagem" rows="5" required placeholder="Conte um pouco sobre o que você busca..."></textarea>
             </label>
             <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            <p class="form-nota">Suas informações são tratadas com sigilo e usadas apenas para retornar seu contato.</p>
           </form>
 
-          <aside class="contato-direto">
+          <aside class="contato-direto reveal reveal-delay">
             <h3>Fale comigo diretamente</h3>
             <ul class="contato-lista">
               <li>
-                <span class="contato-label">WhatsApp</span>
-                <a href="https://wa.me/5511999500914?text=Ol%C3%A1%2C%20Iolanda!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">(11) 99950-0914</a>
+                <a href="https://wa.me/5511999500914?text=Ol%C3%A1%2C%20Iolanda!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">
+                  <span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9.5 9.5c.3 2.3 2.4 4.4 4.7 4.7l1.3-1.3-1.8-.8-.8.8c-.9-.4-1.6-1.1-2-2l.8-.8-.8-1.8z"/></svg></span>
+                  <span class="contato-info"><span class="contato-label">WhatsApp</span>(11) 99950-0914</span>
+                </a>
               </li>
               <li>
-                <span class="contato-label">E-mail</span>
-                <a href="mailto:acolhimentodamente@gmail.com">acolhimentodamente@gmail.com</a>
+                <a href="mailto:acolhimentodamente@gmail.com">
+                  <span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                  <span class="contato-info"><span class="contato-label">E-mail</span>acolhimentodamente@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+                <span class="contato-info"><span class="contato-label">Atendimento</span>Online, para todo o Brasil</span>
               </li>
             </ul>
             <p class="contato-nota">Seu processo começa com um primeiro passo. Estou aqui para te acolher.</p>
@@ -247,9 +311,34 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="ano">2026</span> Iolanda Fernandes — Psicanálise.</p>
-      <p class="footer-note">Atendimento psicanalítico online · Escuta acolhedora e ética</p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#topo" class="logo logo-light">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="currentColor"/><path d="M46 16C29 17 18 28 18 45c0 1.8.2 3.4.5 5C25 35 34 26 46 16z" fill="#2E3A36"/></svg>
+          <span class="logo-text">Iolanda Fernandes<small>Psicanálise</small></span>
+        </a>
+        <p class="footer-note">Atendimento psicanalítico online · Escuta acolhedora e ética</p>
+      </div>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#trabalho">O trabalho</a></li>
+          <li><a href="#areas">Como ajudo</a></li>
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#atendimento">Atendimento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511999500914" target="_blank" rel="noopener">(11) 99950-0914</a></li>
+          <li><a href="mailto:acolhimentodamente@gmail.com">acolhimentodamente@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="ano">2026</span> Iolanda Fernandes — Psicanálise. Todos os direitos reservados.</p>
     </div>
   </footer>
 
